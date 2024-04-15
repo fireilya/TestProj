@@ -1,0 +1,4 @@
+D:\VS Projects\C++ Training\Training\x64\Debug\ConsoleApplication1.exe.lastcodeanalysissucceeded
+D:\VS Projects\C++ Training\Training\ConsoleApplication1\x64\Debug\NativeCodeAnalysis.read.1.tlog
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\x64\Debug\ConsoleApplication1.exe.lastcodeanalysissucceeded
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\x64\Debug\NativeCodeAnalysis.read.1.tlog

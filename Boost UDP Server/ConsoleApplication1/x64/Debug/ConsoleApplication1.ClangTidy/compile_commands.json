@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "D:\\Cube development artefacts\\TestProj-main\\Boost UDP Server\\ConsoleApplication1",
+    "command": "\"C:\\Windows\\system32\\CL.exe\" \/c \/I\"D:\\VS Projects\\LIBRARIES\\boost_1_84_0\" \/I\"D:\\Programms\\VISUAL STUDIO 2022\\addons\\C++\\igloo-codewars\\igloo\\external\" \/I\"D:\\Programms\\VISUAL STUDIO 2022\\addons\\C++\\igloo-codewars\" \/nologo \/W4 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D _DEBUG \/D _CONSOLE \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MDd \/GS \/fp:precise \/std:c++20 \/permissive- \/Fo\"x64\\Debug\\\\\" \/Gd \/TP   \"D:\\Cube development artefacts\\TestProj-main\\Boost UDP Server\\ConsoleApplication1\\ConsoleApplication1.cpp\"",
+    "file": "D:\\Cube development artefacts\\TestProj-main\\Boost UDP Server\\ConsoleApplication1\\ConsoleApplication1.cpp"
+  }
+]

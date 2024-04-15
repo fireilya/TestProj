@@ -1,0 +1,238 @@
+﻿  ConsoleApplication1.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp(15,23): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp(26,26): warning C4100: argv: неиспользованный формальный параметр
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp(26,14): warning C4100: argc: неиспользованный формальный параметр
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp(26,14): warning G24ACD1A9: unused parameter 'argc' [clang-diagnostic-unused-parameter]
+  int main(int argc, char* argv[]) {
+               ^
+D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp(26,26): warning G24ACD1A9: unused parameter 'argv' [clang-diagnostic-unused-parameter]
+  int main(int argc, char* argv[]) {
+                           ^
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp(79,20): warning GF84F7C1B: Use of memory after it is freed [clang-analyzer-cplusplus.NewDelete]
+    arg->exit_event_ = exit_event_ = ::CreateEventW(0, true, false, 0);
+                     ^
+  D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp:27:5: note: Calling 'handle_connections'
+      handle_connections();
+      ^~~~~~~~~~~~~~~~~~~~
+  D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp:11:25: note: Calling constructor for 'basic_datagram_socket<boost::asio::ip::udp, boost::asio::any_io_executor>'
+          ip::udp::socket sock(service, ip::udp::endpoint(ip::udp::v4(), 3333));
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/basic_datagram_socket.hpp:205:7: note: Calling constructor for 'basic_socket<boost::asio::ip::udp, boost::asio::any_io_executor>'
+      : basic_socket<Protocol, Executor>(context, endpoint)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/basic_socket.hpp:233:7: note: Calling constructor for 'io_object_impl<boost::asio::detail::win_iocp_socket_service<boost::asio::ip::udp>, boost::asio::any_io_executor>'
+      : impl_(0, 0, context)
+        ^~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/io_object_impl.hpp:58:17: note: Calling 'use_service<boost::asio::detail::win_iocp_socket_service<boost::asio::ip::udp>>'
+      : service_(&boost::asio::use_service<IoObjectService>(context)),
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/impl/io_context.hpp:41:10: note: Calling 'service_registry::use_service'
+    return ioc.service_registry_->template use_service<Service>(ioc);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:39:33: note: Calling 'service_registry::do_use_service'
+    return *static_cast<Service*>(do_use_service(key, factory, &owner));
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:121:3: note: Loop condition is false. Execution continues on line 131
+    while (service)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:132:36: note: Calling 'service_registry::create'
+    auto_service_ptr new_service = { factory(owner) };
+                                     ^~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:86:14: note: Calling constructor for 'win_iocp_socket_service<boost::asio::ip::udp>'
+    return new Service(*static_cast<Owner*>(owner));
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_iocp_socket_service.hpp:135:7: note: Calling constructor for 'win_iocp_socket_service_base'
+        win_iocp_socket_service_base(context)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_socket_service_base.ipp:33:19: note: Calling 'use_service<boost::asio::detail::win_iocp_io_context>'
+      iocp_service_(use_service<win_iocp_io_context>(context)),
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/impl/execution_context.hpp:35:10: note: Calling 'service_registry::use_service'
+    return e.service_registry_->template use_service<Service>();
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:30:33: note: Calling 'service_registry::do_use_service'
+    return *static_cast<Service*>(do_use_service(key, factory, &owner_));
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:121:3: note: Loop condition is false. Execution continues on line 131
+    while (service)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:132:36: note: Calling 'service_registry::create'
+    auto_service_ptr new_service = { factory(owner) };
+                                     ^~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:86:14: note: Calling constructor for 'win_iocp_io_context'
+    return new Service(*static_cast<Owner*>(owner));
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:96:26: note: 'concurrency_hint' is < 0
+        static_cast<DWORD>(concurrency_hint >= 0 ? concurrency_hint : DWORD(~0)));
+                           ^~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:96:26: note: '?' condition is false
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:97:7: note: Assuming field 'handle' is non-null
+    if (!iocp_.handle)
+        ^~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:97:3: note: Taking false branch
+    if (!iocp_.handle)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:105:7: note: 'own_thread' is true
+    if (own_thread)
+        ^~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:105:3: note: Taking true branch
+    if (own_thread)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:108:23: note: Calling constructor for 'win_thread'
+      thread_.reset(new boost::asio::detail::thread(thread_function(this)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_thread.hpp:74:18: note: Memory is allocated
+      start_thread(new func<Function>(f), stack_size);
+                   ^~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_thread.hpp:74:5: note: Calling 'win_thread::start_thread'
+      start_thread(new func<Function>(f), stack_size);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:70:7: note: Assuming 'entry_event' is null
+    if (!entry_event)
+        ^~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:70:3: note: Taking true branch
+    if (!entry_event)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:73:5: note: Memory is released
+      delete arg;
+      ^~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:79:20: note: Use of memory after it is freed
+    arg->exit_event_ = exit_event_ = ::CreateEventW(0, true, false, 0);
+    ~~~~~~~~~~~~~~~~ ^
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp(90,38): warning GF84F7C1B: Use of memory after it is freed [clang-analyzer-cplusplus.NewDelete]
+    thread_ = reinterpret_cast<HANDLE>(::_beginthreadex(0,
+                                       ^
+  D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp:27:5: note: Calling 'handle_connections'
+      handle_connections();
+      ^~~~~~~~~~~~~~~~~~~~
+  D:\Cube development artefacts\TestProj-main\Boost UDP Server\ConsoleApplication1\ConsoleApplication1.cpp:11:25: note: Calling constructor for 'basic_datagram_socket<boost::asio::ip::udp, boost::asio::any_io_executor>'
+          ip::udp::socket sock(service, ip::udp::endpoint(ip::udp::v4(), 3333));
+                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/basic_datagram_socket.hpp:205:7: note: Calling constructor for 'basic_socket<boost::asio::ip::udp, boost::asio::any_io_executor>'
+      : basic_socket<Protocol, Executor>(context, endpoint)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/basic_socket.hpp:233:7: note: Calling constructor for 'io_object_impl<boost::asio::detail::win_iocp_socket_service<boost::asio::ip::udp>, boost::asio::any_io_executor>'
+      : impl_(0, 0, context)
+        ^~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/io_object_impl.hpp:58:17: note: Calling 'use_service<boost::asio::detail::win_iocp_socket_service<boost::asio::ip::udp>>'
+      : service_(&boost::asio::use_service<IoObjectService>(context)),
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/impl/io_context.hpp:41:10: note: Calling 'service_registry::use_service'
+    return ioc.service_registry_->template use_service<Service>(ioc);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:39:33: note: Calling 'service_registry::do_use_service'
+    return *static_cast<Service*>(do_use_service(key, factory, &owner));
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:121:3: note: Loop condition is false. Execution continues on line 131
+    while (service)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:132:36: note: Calling 'service_registry::create'
+    auto_service_ptr new_service = { factory(owner) };
+                                     ^~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:86:14: note: Calling constructor for 'win_iocp_socket_service<boost::asio::ip::udp>'
+    return new Service(*static_cast<Owner*>(owner));
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_iocp_socket_service.hpp:135:7: note: Calling constructor for 'win_iocp_socket_service_base'
+        win_iocp_socket_service_base(context)
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_socket_service_base.ipp:33:19: note: Calling 'use_service<boost::asio::detail::win_iocp_io_context>'
+      iocp_service_(use_service<win_iocp_io_context>(context)),
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/impl/execution_context.hpp:35:10: note: Calling 'service_registry::use_service'
+    return e.service_registry_->template use_service<Service>();
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:30:33: note: Calling 'service_registry::do_use_service'
+    return *static_cast<Service*>(do_use_service(key, factory, &owner_));
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Suppressed 5 warnings (5 in non-user code).
+  Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:121:3: note: Loop condition is false. Execution continues on line 131
+    while (service)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.ipp:132:36: note: Calling 'service_registry::create'
+    auto_service_ptr new_service = { factory(owner) };
+                                     ^~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/service_registry.hpp:86:14: note: Calling constructor for 'win_iocp_io_context'
+    return new Service(*static_cast<Owner*>(owner));
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:96:26: note: 'concurrency_hint' is < 0
+        static_cast<DWORD>(concurrency_hint >= 0 ? concurrency_hint : DWORD(~0)));
+                           ^~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:96:26: note: '?' condition is false
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:97:7: note: Assuming field 'handle' is non-null
+    if (!iocp_.handle)
+        ^~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:97:3: note: Taking false branch
+    if (!iocp_.handle)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:105:7: note: 'own_thread' is true
+    if (own_thread)
+        ^~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:105:3: note: Taking true branch
+    if (own_thread)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_iocp_io_context.ipp:108:23: note: Calling constructor for 'win_thread'
+      thread_.reset(new boost::asio::detail::thread(thread_function(this)));
+                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_thread.hpp:74:18: note: Memory is allocated
+      start_thread(new func<Function>(f), stack_size);
+                   ^~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/win_thread.hpp:74:5: note: Calling 'win_thread::start_thread'
+      start_thread(new func<Function>(f), stack_size);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:70:7: note: Assuming 'entry_event' is non-null
+    if (!entry_event)
+        ^~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:70:3: note: Taking false branch
+    if (!entry_event)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:80:7: note: Assuming field 'exit_event_' is null
+    if (!exit_event_)
+        ^~~~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:80:3: note: Taking true branch
+    if (!exit_event_)
+    ^
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:83:5: note: Memory is released
+      delete arg;
+      ^~~~~~~~~~
+  D:\VS Projects\LIBRARIES\boost_1_84_0\boost/asio/detail/impl/win_thread.ipp:90:38: note: Use of memory after it is freed
+    thread_ = reinterpret_cast<HANDLE>(::_beginthreadex(0,
+                                       ^
+  ConsoleApplication1.vcxproj -> D:\Cube development artefacts\TestProj-main\Boost UDP Server\x64\Debug\ConsoleApplication1.exe
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\execution\any_executor.hpp(489): warning C26495: Переменная "boost::asio::execution::detail::any_executor_base::object_" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\execution\any_executor.hpp(614): warning C26495: Переменная "boost::asio::execution::detail::any_executor_base::object_" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_event.ipp(57): warning C6387: "this->events_[0]" может быть равен "0":  это не соответствует спецификации функции "CloseHandle". 
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_thread.ipp(50): warning C6258: Использование TerminateThread не позволит выполнить правильную очистку потока.
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_thread.ipp(91): warning C6001: Использование неинициализированной памяти "arg".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_thread.ipp(105): warning C6001: Использование неинициализированной памяти "entry_event".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_thread.ipp(107): warning C6001: Использование неинициализированной памяти "*entry_event".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\scheduler_thread_info.hpp(34): warning C26495: Переменная "boost::asio::detail::scheduler_thread_info::private_outstanding_work" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_iocp_io_context.ipp(571): warning C6387: "waitable_timer_.handle" может быть равен "0":  это не соответствует спецификации функции "SetWaitableTimer". 
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\socket_ops.ipp(2486): warning C6255: Функция "_alloca" сообщает об ошибке, вызывая исключение переполнения стека.  Попробуйте вместо этого использовать _malloca.
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\socket_ops.ipp(2701): warning C6255: Функция "_alloca" сообщает об ошибке, вызывая исключение переполнения стека.  Попробуйте вместо этого использовать _malloca.
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_iocp_socket_service_base.ipp(249): warning C6387: "GetModuleHandleA("KERNEL32")" может быть равен "0":  это не соответствует спецификации функции "GetProcAddress". 
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_iocp_handle_service.ipp(285): warning C6387: "GetModuleHandleA("KERNEL32")" может быть равен "0":  это не соответствует спецификации функции "GetProcAddress". 
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_iocp_file_service.ipp(39): warning C6387: "GetModuleHandleA("NTDLL")" может быть равен "0":  это не соответствует спецификации функции "GetProcAddress". 
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(72): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(74): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(76): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(78): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(80): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(82): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\ip\impl\network_v4.ipp(84): warning C26819: Неаннотированная передача управления между метками switch (es.78).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\strand_executor_service.hpp(78): warning C26495: Переменная "boost::asio::detail::strand_executor_service::strand_impl::prev_" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(106): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(158): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(201): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(254): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(307): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\impl\win_object_handle_service.ipp(409): warning C6031: Возвращаемое значение пропущено: "UnregisterWaitEx".
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\date_time\microsec_time_clock.hpp(120): warning C26498: Функция "boost::date_time::time_resolution_traits<boost::date_time::time_resolution_traits_adapted64_impl,5,1000000,6,__int64>::res_adjust" помечена как constexpr, пометьте переменную "adjust" как constexpr, если требуется вычисление во время компиляции (con.5).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\date_time\time_system_counted.hpp(97): warning C26498: Функция "boost::date_time::time_resolution_traits<boost::date_time::time_resolution_traits_adapted64_impl,5,1000000,6,__int64>::res_adjust" помечена как constexpr, пометьте переменную "fractional_sec_per_sec" как constexpr, если требуется вычисление во время компиляции (con.5).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\win_thread.hpp(102): warning C26495: Переменная "boost::asio::detail::win_thread::func_base::entry_event_" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\detail\win_iocp_socket_service_base.hpp(86): warning C26495: Переменная "boost::asio::detail::win_iocp_socket_service_base::base_implementation_type::prev_" не инициализирована. Всегда инициализируйте переменную-член (type.6).
+D:\VS Projects\LIBRARIES\boost_1_84_0\boost\asio\io_context.hpp(668): warning C26437: Не используйте срезы (es.63).
